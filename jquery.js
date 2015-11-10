@@ -1,4 +1,12 @@
 
+/**
+ * Created by Weeping Beef on 11/10/15.
+ */
+
+
+/**
+ * Function sends ajax request to itunes rss feed and returns top 10 movies and appends them to page.
+ */
 function appleRss() {
     $.ajax({
         method: 'post',
@@ -21,8 +29,26 @@ function appleRss() {
 
         }
     });
-
 }
+
+/**
+ *
+ */
+function twitter() {
+    $.ajax({
+        method: 'POST',
+        dataType: 'json',
+        url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
+        success: function(response) {
+            console.log("twitter", response);
+        }
+    })
+}
+
+
+
+
+
 
 
 $(document).ready(function () {
@@ -30,8 +56,6 @@ $(document).ready(function () {
     //$('.imgdiv').click(function(){
     //
     //}
-
-
 
 
 

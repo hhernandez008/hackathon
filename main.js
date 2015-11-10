@@ -29,14 +29,25 @@ function movieInfo(movie){
     vineSearch.getData(movie, function(boolean, data){
         //TODO: How to access vine response data
         if(boolean){
-            console.log("Vine " + data);
+            console.log(data);
         }
     });
     twitterSearch.getData(movie, function(boolean, data){
         //TODO: How to access twitter response data
         if(boolean){
-            console.log("Twitter " + data);
+            console.log(data);
+            var tweet = data.tweets;
+            for(i=0; i < tweet.statuses.length; i++) {
+                var tweets= tweet.statuses[i].text;
+                var twitterParagraph = $('<p>', {
+                    text: tweets
+                });
+                $(".twitter").append(twitterParagraph);
+            }
+        } else {
+            console.log(boolean);
         }
+
     });
 
 }
