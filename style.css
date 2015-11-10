@@ -1,13 +1,27 @@
-* {
-    border: 2px solid black;
+body {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
 }
-.main_container {
+header, .column, .column_header, .column_content, .column_footer  {
+    border: 1px solid black;
+}
+.title {
+    height: 10%;
+}
+.all_columns {
+    height: 90%;
+}
+.column {
     height: 100%;
 }
-h1 {
-    font-weight: bold;
+.column_header {
+    height: 10%;
 }
-.itunes {
-    height: 80vh;
+.column_content {
+    height: 80%;
+    overflow: scroll;
 }
-.
+.column_footer {
+    height: 10%;
+}
