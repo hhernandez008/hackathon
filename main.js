@@ -15,10 +15,10 @@ movieInfo("jurassic world");
 
 
 function movieInfo(movie){
-    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, data){
+    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, response){
         if(boolean) {
-            console.log("YouTube", data, "ID:", data.video[1].id);
-            apis.youtube.playVideo(data.video[1].id, "190", 320);
+            console.log("YouTube", response, "ID:", response.video[1].id);
+            apis.youtube.playVideo(response.video[1].id, "175", "295");
             setTimeout(function () {
                 apis.youtube.stopVideo()
             }, 20000);
@@ -26,16 +26,16 @@ function movieInfo(movie){
             console.log("YouTube Failed");
         }
     });
-    vineSearch.getData(movie, function(boolean, data){
+    vineSearch.getData(movie, function(boolean, response){
         //TODO: How to access vine response data
         if(boolean){
-            console.log("Vine " + data);
+            console.log("Vine " + response);
         }
     });
-    twitterSearch.getData(movie, function(boolean, data){
+    twitterSearch.getData(movie, function(boolean, response){
         //TODO: How to access twitter response data
         if(boolean){
-            console.log("Twitter " + data);
+            console.log("Twitter " + response);
         }
     });
 
