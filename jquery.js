@@ -1,12 +1,10 @@
-/**
- * Created by christophereaton on 11/10/15.
- */
 
 function appleRss() {
     $.ajax({
         method: 'post',
         dataType: 'json',
         url: 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/json',
+
         success: function (response) {
             console.log(response);
             var movies = response.feed.entry;
@@ -16,6 +14,7 @@ function appleRss() {
                 var imageDiv = $('<div>').append(image, imageInfo);
                 $(imageDiv).attr('class','imgdiv');
                 $('.itunes').append(imageDiv);
+
             }
         },
         error: function (resp) {
