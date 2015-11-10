@@ -15,7 +15,7 @@ function appleRss() {
                 var imageInfo = $('<div>').html(movies[i]['im:name']['label']);
                 var imageDiv = $('<div>').append(image, imageInfo);
                 $(imageDiv).attr('class','imgdiv');
-                $('body').append(imageDiv);
+                $('.itunes').append(imageDiv);
             }
         },
         error: function (resp) {
@@ -25,15 +25,15 @@ function appleRss() {
 
 }
 
-//
-//$(document).ready(function () {
-//    appleRss();
-//    $('.imgdiv').click(function(){
-//
-//    }
-//
-//
-//
-//
-//
-//});
+
+$(document).ready(function () {
+    appleRss();
+    //$('.imgdiv').click(function(){
+    //
+    //}
+
+
+
+
+
+});
