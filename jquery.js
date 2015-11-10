@@ -25,15 +25,15 @@ function appleRss() {
 
 }
 
-
-$(document).ready(function () {
-    appleRss();
-    $('.imgdiv').click(function(){
-
-    }
-
-
-
-
-
-});
+//
+//$(document).ready(function () {
+//    appleRss();
+//    $('.imgdiv').click(function(){
+//
+//    }
+//
+//
+//
+//
+//
+//});
