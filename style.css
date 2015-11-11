@@ -1,13 +1,25 @@
-* {
-    border: 2px solid black;
+body {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
 }
-.main_container {
+header, .column, .column_header, .column_content, .column_footer  {
+    border: 1px solid black;
+}
+.title {
+    height: 10%;
+}
+.all_columns {
+    height: 90%;
+}
+.column {
     height: 100%;
     padding: 0;
 }
-h1 {
-    font-weight: bold;
+.column_header {
+    height: 10%;
 }
+<<<<<<< HEAD
 .col-sm-3 {
     height: 100vh;
     padding: 0;
@@ -19,4 +31,12 @@ h1 {
     height: 26px;
     background-color: lightgrey;
     padding: 0;
+=======
+.column_content {
+    height: 80%;
+    overflow: scroll;
+}
+.column_footer {
+    height: 10%;
+>>>>>>> cc7cdd259e82d017ff44e834a1531589a1ef50ef
 }

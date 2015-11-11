@@ -1,3 +1,9 @@
+/* Global Variables */
+var youTubeSearch = apis.youtube;
+var vineSearch = apis.vine;
+var twitterSearch = apis.twitter;
+
+
 
 /**
  * Created by Weeping Beef on 11/10/15.
@@ -24,6 +30,9 @@ function appleRss() {
                 $('.itunes').append(imageDiv);
 
             }
+            $('.imgdiv').click(function(){
+                movieInfo($(this).find('div').text());
+            });
         },
         error: function (resp) {
 
@@ -34,7 +43,7 @@ function appleRss() {
 /**
  *
  */
-function twitter() {
+/*function twitter() {
     $.ajax({
         method: 'POST',
         dataType: 'json',
@@ -43,6 +52,44 @@ function twitter() {
             console.log("twitter", response);
         }
     })
+}*/
+
+function movieInfo(movie){
+    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, data){
+        if(boolean) {
+            console.log("YouTube", data, "ID:", data.video[1].id);
+            apis.youtube.playVideo(data.video[1].id, "190", 320);
+            setTimeout(function () {
+                apis.youtube.stopVideo()
+            }, 20000);
+        }else{
+            console.log("YouTube Failed");
+        }
+    });
+    vineSearch.getData(movie, function(boolean, data){
+        //TODO: How to access vine response data
+        if(boolean){
+            console.log(data);
+        }
+    });
+    twitterSearch.getData(movie, function(boolean, data){
+        //TODO: How to access twitter response data
+        if(boolean){
+            console.log(data);
+            var tweet = data.tweets;
+            for(i=0; i < tweet.statuses.length; i++) {
+                var tweets= tweet.statuses[i].text;
+                var twitterParagraph = $('<p>', {
+                    text: tweets
+                });
+                $(".twitter").append(twitterParagraph);
+            }
+        } else {
+            console.log(boolean);
+        }
+
+    });
+
 }
 
 
@@ -53,9 +100,7 @@ function twitter() {
 
 $(document).ready(function () {
     appleRss();
-    //$('.imgdiv').click(function(){
-    //
-    //}
+
 
 
 
