@@ -14,13 +14,29 @@ var twitterSearch = apis.twitter;
 /**
  * Function sends ajax request to itunes rss feed and returns top 10 movies and appends them to page.
  */
-function appleRss() {
+function appleRss(genreId) {
+
+    var url = null;
+    var genreUrls = [
+        {genre:"all", url:'https://itunes.apple.com/us/rss/topmovies/limit=10/xml'},
+        {genre:"action", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4401/xml"},
+        {genre:"comedy", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4404/xml"},
+        {genre:"horror", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4408/xml"}
+    ];
+
+    for(var i = 0; i < genreUrls.length; i++){
+        if(genreUrls[i].genre === genreId){
+            url=genreUrls[i].url;
+            break;
+        }
+    }
     $.ajax({
         method: 'post',
         dataType: 'json',
-        url: 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/json',
+        url: url,
 
         success: function (response) {
+        console.log(response);
             var movies = response.feed.entry;
             for (var i = 0; i < movies.length; i++) {
                 var image = $('<img>').attr('src', movies[i]['im:image'][2]['label']);
@@ -144,7 +160,7 @@ function placeVideos(array){
 
 
 $(document).ready(function () {
-    appleRss();
+    appleRss('all');
 
     //Click handler for each YouTube default image to play the video
     $(".youtube").on("click",".youtubeVideo", function(){
@@ -156,7 +172,10 @@ $(document).ready(function () {
         //replace the div that holds the default image with the iframe that holds the video
         $(this).replaceWith($iframe);
     });
-
+    $(".dropdown-menu").on('click',"li", function (){
+       var genreId = $("this").attr('id');
+        appleRss(genreId)
+    })
 
 
 });
