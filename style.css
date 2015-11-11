@@ -61,16 +61,20 @@ body {
     }
 }
 .btn-default {
+    color: #000;
     background-color: yellow;
 }
 .open>.dropdown-toggle.btn-default,
 .btn-default:focus, .btn-default:hover {
+    color: #000;
     background-color: yellow;
 }
 .dropdown-menu {
+    color: #000;
     background-color: yellow;
 }
 .open>.dropdown-toggle.btn-default {
+    color: #000;
     background-color: yellow;
 }
     /* YouTube Videos */

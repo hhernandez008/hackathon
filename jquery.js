@@ -11,6 +11,16 @@ var twitterSearch = apis.twitter;
  */
 
 
+function clearPage(){
+    $('.twitter').empty();
+    $('.vine').empty();
+    $(".youtube").empty();
+    movieInfo($(this).find('div').text());
+    // changed title header according to specific movie clicked
+    $('.movie_title').find("h4").text($(this).find('div').text());
+
+}
+
 /**
  * Function sends ajax request to itunes rss feed and returns top 10 movies and appends them to page.
  */
@@ -18,10 +28,10 @@ function appleRss(genreId) {
 
     var url = null;
     var genreUrls = [
-        {genre:"all", url:'https://itunes.apple.com/us/rss/topmovies/limit=10/xml'},
-        {genre:"action", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4401/xml"},
-        {genre:"comedy", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4404/xml"},
-        {genre:"horror", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4408/xml"}
+        {genre:"all", url:'https://itunes.apple.com/us/rss/topmovies/limit=10/json'},
+        {genre:"action", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4401/json"},
+        {genre:"comedy", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4404/json"},
+        {genre:"horror", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4408/json"}
     ];
 
     for(var i = 0; i < genreUrls.length; i++){
@@ -51,14 +61,8 @@ function appleRss(genreId) {
 
             //add click handler to imageDiv
             $('.imgdiv').click(function(){
-                $('.twitter').empty();
-                $('.vine').empty();
-                $(".youtube").empty();
-                movieInfo($(this).find('div').text());
-                // changed title header according to specific movie clicked
-                $('.movie_title').find("h4").text($(this).find('div').text());
-
-            });
+                clearPage();
+            })
         },
         error: function (resp) {
 
@@ -172,9 +176,12 @@ $(document).ready(function () {
         //replace the div that holds the default image with the iframe that holds the video
         $(this).replaceWith($iframe);
     });
-    $(".dropdown-menu").on('click',"li", function (){
-       var genreId = $("this").attr('id');
-        appleRss(genreId)
+    $(".dropdown-menu").on("click","li", function (){
+        console.log("li clicked");
+        console.log(this);
+       var genreId = $(this).attr('id');
+        clearPage();
+        appleRss(genreId);
     })
 
 
