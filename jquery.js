@@ -80,7 +80,7 @@ function movieInfo(movie){
             var tweet = data.tweets;
             for (i = 0; i < tweet.statuses.length; i++) {
                 var tweets = tweet.statuses[i].text;
-                var twitterParagraph = $('<p>', {
+                var twitterParagraph = $('<div>', {
                     text: tweets
                 });
                 $(".twitter").append(twitterParagraph);
