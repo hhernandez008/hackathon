@@ -58,4 +58,31 @@ body {
         background-color: transparent;
         color: #f3dd00;
     }
+
+}
+
+/* YouTube Videos */
+.youtubeVideo{
+    width: 295px;
+    height: 175px;
+    margin: 3% 0;
+}
+.thumb{
+    width: inherit;
+    height: inherit;
+}
+.playButton{
+    height: 30%;
+    position: relative;
+    top: -60%;
+    left: 40%;
+    background-image: url("playicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Vine Videos */
+.vine-embed{
+    width: 295px !important;
+    height: 295px !important;
 }
