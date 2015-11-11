@@ -15,10 +15,6 @@ function clearPage(){
     $('.twitter').empty();
     $('.vine').empty();
     $("#youtube").empty();
-    movieInfo($(this).find('div').text());
-    // changed title header according to specific movie clicked
-    $('.movie_title').find("h4").text($(this).find('div').text());
-
 }
 
 /**
@@ -58,12 +54,14 @@ function appleRss(genreId) {
             }
             //Search & append results for first movie
             movieInfo(movies[0]['im:name']['label']);
-            $('.movie_title').find("h3").text(movies[0]['im:name']['label']);
+            $('.movie_title').find("h2").text(movies[0]['im:name']['label']);
 
             //add click handler to imageDiv
             $('.imgdiv').click(function(){
-
                 clearPage();
+                movieInfo($(this).find('div').text());
+                // changed title header according to specific movie clicked
+                $('.movie_title').find("h2").text($(this).find('div').text());
             })
 
         },
@@ -108,6 +106,9 @@ function movieInfo(movie){
                     });
                     $(".vine").append(vinesParagraph);
                 }
+            }
+            if(vine.length == 0){
+                $(".vine").append("<p>Vine doesn't care about " + movie + ".");
             }
 
         }else{
@@ -190,6 +191,8 @@ $(document).ready(function () {
         console.log("li clicked");
         console.log(this);
        var genreId = $(this).attr('id');
+        //clear itunes
+        $(".itunes").html("");
         clearPage();
         appleRss(genreId);
     })
