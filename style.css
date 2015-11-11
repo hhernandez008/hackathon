@@ -1,6 +1,6 @@
 @font-face {
     font-family: film_font;
-    src: url(fonts/Movie%20Filmstrip.ttf);
+    src: url(fonts/sucker_font_2013_Juan_Casco.ttf);
 }
 body {
     text-align: center;
@@ -11,20 +11,22 @@ body {
     background-size: 100% auto;
     background-color: black;
     color: white;
-
 }
 .title, .headers, .column_footer {
     font-family: film_font, sans-serif;
     color: #f3dd00;
-    #text-shadow: #840000 0.2em 0.2em 0.4em;
-
 }
 .title {
     height: 15%;
     width: 100%;
-    /*color: #840000; */
-    color: #630000;
-    text-shadow: #f3dd00 0.2em 0.2em 0.4em;
+    color: #f3dd00;
+    -webkit-text-stroke: 1px #630000;
+    text-shadow:
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 .headers {
     height: 15%;
@@ -50,4 +52,10 @@ body {
 }
 .image_text {
     background-color: #f3dd00;
+}
+@media screen and (max-width: 768px) {
+    .image_text {
+        background-color: transparent;
+        color: #f3dd00;
+    }
 }
