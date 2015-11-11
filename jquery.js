@@ -45,12 +45,21 @@ function appleRss() {
 function movieInfo(movie){
     youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, response){
         if(boolean) {
-            console.log("YouTube", response, "ID:", response.video[1].id);
-            apis.youtube.playVideo(response.video[1].id, "175", "295");
-
-            setTimeout(function () {
-                apis.youtube.stopVideo()
-            }, 20000);
+            //console.log("YouTube", response, "ID:", response.video[1].id);
+            for(var i = 0; i < response.video.length; i++) {
+                if($("#player").is("div")){
+                    apis.youtube.playVideo(response.video[1].id, "175", "295");
+                    setTimeout(function () {
+                        apis.youtube.stopVideo()
+                    }, 20000);
+                    $("#player").attr("id", "");
+                }
+                //apis.youtube.playVideo(response.video[1].id, "175", "295");
+                //
+                //setTimeout(function () {
+                //    apis.youtube.stopVideo()
+                //}, 20000);
+            }
         } else {
             console.log("YouTube Failed");
         }
