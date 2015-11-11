@@ -24,7 +24,7 @@ function appleRss() {
             var movies = response.feed.entry;
             for (var i = 0; i < movies.length; i++) {
                 var image = $('<img>').attr('src', movies[i]['im:image'][2]['label']);
-                var imageInfo = $('<div>').html(movies[i]['im:name']['label']);
+                var imageInfo = $('<div class="image_text">').html(movies[i]['im:name']['label']);
                 var imageDiv = $('<div>').append(image, imageInfo);
                 $(imageDiv).attr('class','imgdiv');
                 $('.itunes').append(imageDiv);
@@ -34,6 +34,9 @@ function appleRss() {
                 $('.twitter').empty();
                 $('.vine').empty();
                 movieInfo($(this).find('div').text());
+                // changed title header according to specific movie clicked
+                $('.movie_title').find("h4").text($(this).find('div').text());
+
             });
         },
         error: function (resp) {

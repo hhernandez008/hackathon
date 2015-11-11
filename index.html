@@ -3,65 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Weeping Beef</title>
-
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="jquery.js"></script>
-    <!--<script src="main.js"></script>-->
-
-
-
 </head>
 <body class="container-fluid">
-    <div class="row title"><h2>Weeping Beef</h2></div>
+<!-- title and headers -->
+    <div class="row title"><h1>Weeping Beef</h1></div>
     <div class="row headers">
-        <div class="col-md-3 col-lg-3 top_movies">Top 10 Movies</div>
-        <div class="col-md-9 col-lg-9 title">Title</div>
+        <div class="col-sm-offset-3 col-sm-1 col-sm-offset-3 col-sm-1 col-md-offset-3 col-md-1 col-lg-offset-3 col-lg-1 top_movies"><h4>Top 10 Movies</h4></div>
+        <div class="col-sm-8 col-md-8 col-lg-8 movie_title"><h4>Title</h4></div>
     </div>
+<!-- Containers for: top 10 movies, youtube trailers, twitter, vine -->
     <div class="row all_columns">
-        <div class="col-md-3 col-lg-3 column">
+        <!-- top 10 movies -->
+        <div class="col-sm-2 col-sm-offset-2 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 column">
             <div class="row column_content">
-                <div class="col-md-12 itunes"></div>
+                <div class="col-sm-12 col-md-12 col-lg-12 itunes"></div>
             </div>
         </div>
-
-        <div class="col-md-3 col-lg-3 column">
+        <!-- youtube trailers -->
+        <div class="col-sm-2 col-md-2 col-lg-2 column">
             <div class="row column_content">
-                <!-- Container for youtube player -->
-                <div class="col-md-12 youtube" id="player"></div>
+                <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 youtube" id="player"></div>
             </div>
             <div class="row column_footer">
-                <div class="col-md-12">Youtube</div>
-            </div>
-
-        </div>
-        <div class="col-md-3 col-lg-3 column">
-            <div class="row column_content">
-                <div class="col-md-10 col-md-offset-1 twitter"></div>
-            </div>
-            <div class="row column_footer">
-                <div class="col-md-12">Twitter</div>
+                <div class="col-sm-12 col-md-12 col-sm-12">Youtube</div>
             </div>
         </div>
-        <div class="col-md-3 col-lg-3 column">
+        <!-- twitter -->
+        <div class="col-sm-2 col-md-2 col-lg-2 column">
             <div class="row column_content">
-                <div class="col-md-12 vine"></div>
+                <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 twitter"></div>
             </div>
             <div class="row column_footer">
-                <div class="col-md-12">Vine</div>
+                <div class="col-sm-12 col-md-12 col-lg-12">Twitter</div>
             </div>
-
+        </div>
+        <!-- vine -->
+        <div class="col-sm-2 col-md-2 col-lg-2 column">
+            <div class="row column_content">
+                <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 vine"></div>
+            </div>
+            <div class="row column_footer">
+                <div class="col-sm-12 col-md-12 col-lg-12">Vine</div>
+            </div>
         </div>
     </div>
-
-
-
-
-
 </body>
 </html>
