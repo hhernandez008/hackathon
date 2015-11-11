@@ -29,7 +29,7 @@ function movieInfo(movie){
     });
 
     vineSearch.getData(movie, function (boolean, data) {
-        //TODO: How to access vine response data
+
         if (boolean) {
             console.log(data);
             var vine = data.vines;
@@ -46,7 +46,7 @@ function movieInfo(movie){
         }
     });
     twitterSearch.getData(movie, function (boolean, data) {
-        //TODO: How to access twitter response data
+
         if (boolean) {
             console.log(data);
             var tweet = data.tweets;

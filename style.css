@@ -1,30 +1,96 @@
+@font-face {
+    font-family: film_font;
+    src: url(fonts/sucker_font_2013_Juan_Casco.ttf);
+}
 body {
     text-align: center;
     height: 100vh;
     width: 100vw;
+    background-image: url(images/movie_curtains.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-color: black;
+    color: white;
 }
-header, .column, .column_header, .column_content, .column_footer  {
-    border: 1px solid black;
+.title, .headers, .column_footer {
+    font-family: film_font, sans-serif;
+    color: #f3dd00;
 }
 .title {
-    height: 10%;
+    height: 15%;
+    width: 100%;
+    color: #f3dd00;
+    -webkit-text-stroke: 1px #630000;
+    text-shadow: 3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.headers {
+    height: 15%;
 }
 .all_columns {
-    height: 90%;
+    height: 70%;
 }
 .column {
     height: 100%;
-    padding: 0;
 }
-.column_header {
-    height: 10%;
-}
-
 .column_content {
     height: 80%;
-    overflow: scroll;
+    overflow: auto;
+    overflow-x: hidden;
 }
 .column_footer {
     height: 10%;
+}
 
+/* iTunes */
+.itunes {
+    color: black;
+    font-weight: bold;
+    font-family: film_font, sans-serif;
+}
+.image_text {
+    background-color: #f3dd00;
+}
+@media screen and (max-width: 768px) {
+    .image_text {
+        background-color: transparent;
+        color: #f3dd00;
+    }
+}
+
+/* YouTube Videos */
+.youtubeVideo {
+    width: 295px;
+    height: 175px;
+    margin: 3% 0;
+}
+.thumb {
+    width: inherit;
+    height: inherit;
+}
+.playButton {
+    height: 30%;
+    position: relative;
+    top: -60%;
+    left: 40%;
+    background-image: url("playicon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Vine Videos */
+.vine-embed {
+    width: 220px !important;
+    height: 220px !important;
+}
+
+/* Twitter */
+.twitter {
+    text-align: left;
+}
+.tweets {
+    margin: 14% 0%;
 }
