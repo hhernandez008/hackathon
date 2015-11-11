@@ -13,11 +13,13 @@ $(document).ready(function () {
 }); //end document ready
 
 
-function movieInfo(movie) {
-    youTubeSearch.getData(movie + " Official Trailer", "5", function (boolean, data) {
-        if (boolean) {
-            console.log("YouTube", data, "ID:", data.video[1].id);
-            apis.youtube.playVideo(data.video[1].id, "190", 320);
+
+function movieInfo(movie){
+    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, response){
+        if(boolean) {
+            console.log("YouTube", response, "ID:", response.video[1].id);
+            apis.youtube.playVideo(response.video[1].id, "175", "295");
+
             setTimeout(function () {
                 apis.youtube.stopVideo()
             }, 20000);
@@ -25,6 +27,7 @@ function movieInfo(movie) {
             console.log("YouTube Failed");
         }
     });
+
     vineSearch.getData(movie, function (boolean, data) {
         //TODO: How to access vine response data
         if (boolean) {
@@ -56,6 +59,7 @@ function movieInfo(movie) {
             }
         } else {
             console.log(boolean);
+
         }
     });
 }
