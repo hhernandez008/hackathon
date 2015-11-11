@@ -70,6 +70,8 @@ function movieInfo(movie){
         //TODO: How to access vine response data
         if(boolean){
             console.log(data);
+
+
         }
     });
     twitterSearch.getData(movie, function(boolean, data){
