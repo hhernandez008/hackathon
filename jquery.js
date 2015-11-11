@@ -58,11 +58,14 @@ function appleRss(genreId) {
             }
             //Search & append results for first movie
             movieInfo(movies[0]['im:name']['label']);
+            $('.movie_title').find("h3").text(movies[0]['im:name']['label']);
 
             //add click handler to imageDiv
             $('.imgdiv').click(function(){
+
                 clearPage();
             })
+
         },
         error: function (resp) {
 
@@ -164,17 +167,24 @@ function placeVideos(array){
 
 
 $(document).ready(function () {
+
     appleRss('all');
 
+    $('#videoPlayer').modal('hide');
+
+
     //Click handler for each YouTube default image to play the video
-    $(".youtube").on("click",".youtubeVideo", function(){
+    $("#youtube").on("click",".youtubeVideo", function(){
+        var $modal = $(".modal-body");
         //create iframe for video
         var $iframe = $("<iframe>",{
+            class: "videoToPlay",
             //add video url as source
             src: "https://www.youtube.com/embed/" + $(this).attr("id") + "?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1"
         });
         //replace the div that holds the default image with the iframe that holds the video
-        $(this).replaceWith($iframe);
+        $($modal).html($iframe);
+        $("#videoPlayer").modal("show");
     });
     $(".dropdown-menu").on("click","li", function (){
         console.log("li clicked");

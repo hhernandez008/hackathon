@@ -54,12 +54,23 @@ body {
 .image_text {
     /*background-color: #f3dd00;*/
 }
+.imgdiv{
+    margin: 1% 0;
+    padding: 1% 0;
+}
+.imgdiv>img{
+    width: 65%;
+}
+.imgdiv:hover{
+    background-color: yellow;
+}
 @media screen and (max-width: 768px) {
     .image_text {
         background-color: transparent;
         color: #f3dd00;
     }
 }
+
 .btn-default {
     color: #000;
     background-color: yellow;
@@ -77,10 +88,12 @@ body {
     color: #000;
     background-color: yellow;
 }
-    /* YouTube Videos */
-.youtubeVideo {
-    width: 295px;
-    height: 175px;
+
+/* YouTube Videos */
+.youtubeVideo{
+    width: 155px;
+    height: 170px;
+
     margin: 3% 0;
 }
 .thumb {
@@ -97,6 +110,30 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Modal for Videos */
+.modal-content{
+    width: 680px;
+}
+.modal-dialog, .modal-content{
+    background-color: #000;
+}
+.close{
+    color: #fff;
+    opacity: 1
+}
+.modal-header, .modal-footer{
+    border: none;
+}
+.modal-title{
+    font-weight: bold;
+}
+
+.videoToPlay{
+    width: 640px;
+    height: 385px;
+}
+
+
 /* Vine Videos */
 .vine-embed {
     width: 220px !important;
@@ -108,5 +145,5 @@ body {
     text-align: left;
 }
 .tweets {
-    margin: 14% 0%;
+    margin: 14% 0;
 }

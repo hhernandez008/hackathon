@@ -31,8 +31,10 @@
             </ul>
         </div>
     </div>
-    <div class="col-sm-7 movie_title"><h4></h4></div>
+    <div class="col-sm-7 movie_title"><h3></h3></div>
+
 </div>
+
 <!-- Containers for: top 10 movies, youtube trailers, twitter, vine -->
 <div class="row all_columns">
     <!-- top 10 movies -->
@@ -40,6 +42,7 @@
         <div class="row column_content">
             <div class="col-sm-12 itunes"></div>
         </div>
+
         <div class="row column_footer">
             <div class="col-sm-12"><h3>iTunes</h3></div>
         </div>
@@ -72,6 +75,27 @@
         </div>
     </div>
 </div>
+
+    <!-- YouTube Video Modal -->
+    <div id="videoPlayer" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn-default" data-dismiss="modal">&times;</button>
+                    <div class="movie_title"><h3 class="modal-title"></h3></div>
+                </div>
+                <div class="modal-body">
+                    <!-- add video iframe form .youtubeVideo click handler (jquery.js) -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 
