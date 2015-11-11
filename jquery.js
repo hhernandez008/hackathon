@@ -58,6 +58,7 @@ function movieInfo(movie){
         //TODO: How to access vine response data
         if (boolean) {
             console.log(data);
+
             var vine = data.vines;
             for (i = 0; i < vine.length; i++) {
                 if (vine[i] !== null) {
@@ -69,6 +70,7 @@ function movieInfo(movie){
                     $(".vine").append(vinesParagraph);
                 }
             }
+
         }
     });
     twitterSearch.getData(movie, function (boolean, data) {
