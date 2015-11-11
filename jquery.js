@@ -40,47 +40,46 @@ function appleRss() {
     });
 }
 
-/**
- *
- */
-/*function twitter() {
-    $.ajax({
-        method: 'POST',
-        dataType: 'json',
-        url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
-        success: function(response) {
-            console.log("twitter", response);
-        }
-    })
-}*/
-
 function movieInfo(movie){
-    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, data){
+    youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, response){
         if(boolean) {
-            console.log("YouTube", data, "ID:", data.video[1].id);
-            apis.youtube.playVideo(data.video[1].id, "190", 320);
+            console.log("YouTube", response, "ID:", response.video[1].id);
+            apis.youtube.playVideo(response.video[1].id, "175", "295");
+
             setTimeout(function () {
                 apis.youtube.stopVideo()
             }, 20000);
-        }else{
+        } else {
             console.log("YouTube Failed");
         }
     });
-    vineSearch.getData(movie, function(boolean, data){
+
+    vineSearch.getData(movie, function (boolean, data) {
         //TODO: How to access vine response data
-        if(boolean){
+        if (boolean) {
             console.log(data);
 
+            var vine = data.vines;
+            for (i = 0; i < vine.length; i++) {
+                if (vine[i] !== null) {
+                    console.log("vine[" + i + "].html", vine[i].html);
+                    var vines = vine[i].html;
+                    var vinesParagraph = $("<div>", {
+                        html: vines
+                    });
+                    $(".vine").append(vinesParagraph);
+                }
+            }
 
         }
     });
-    twitterSearch.getData(movie, function(boolean, data){
+    twitterSearch.getData(movie, function (boolean, data) {
         //TODO: How to access twitter response data
-        if(boolean){
+        if (boolean) {
             console.log(data);
             var tweet = data.tweets;
-            for(i=0; i < tweet.statuses.length; i++) {
-                var tweets= tweet.statuses[i].text;
+            for (i = 0; i < tweet.statuses.length; i++) {
+                var tweets = tweet.statuses[i].text;
                 var twitterParagraph = $('<p>', {
                     text: tweets
                 });
@@ -88,10 +87,9 @@ function movieInfo(movie){
             }
         } else {
             console.log(boolean);
+
         }
-
     });
-
 }
 
 
