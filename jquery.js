@@ -31,6 +31,8 @@ function appleRss() {
 
             }
             $('.imgdiv').click(function(){
+                $('.twitter').empty();
+                $('.vine').empty();
                 movieInfo($(this).find('div').text());
             });
         },
