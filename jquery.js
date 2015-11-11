@@ -5,6 +5,14 @@ var twitterSearch = apis.twitter;
 
 
 
+/**
+ * Created by Weeping Beef on 11/10/15.
+ */
+
+
+/**
+ * Function sends ajax request to itunes rss feed and returns top 10 movies and appends them to page.
+ */
 function appleRss() {
     $.ajax({
         method: 'post',
@@ -30,8 +38,21 @@ function appleRss() {
 
         }
     });
-
 }
+
+/**
+ *
+ */
+/*function twitter() {
+    $.ajax({
+        method: 'POST',
+        dataType: 'json',
+        url: 'http://s-apis.learningfuze.com/hackathon/twitter/index.php',
+        success: function(response) {
+            console.log("twitter", response);
+        }
+    })
+}*/
 
 function movieInfo(movie){
     youTubeSearch.getData(movie + " Official Trailer","5", function(boolean, data){
@@ -48,23 +69,37 @@ function movieInfo(movie){
     vineSearch.getData(movie, function(boolean, data){
         //TODO: How to access vine response data
         if(boolean){
-            console.log("Vine " + data);
+            console.log(data);
         }
     });
     twitterSearch.getData(movie, function(boolean, data){
         //TODO: How to access twitter response data
         if(boolean){
-            console.log("Twitter " + data);
+            console.log(data);
+            var tweet = data.tweets;
+            for(i=0; i < tweet.statuses.length; i++) {
+                var tweets= tweet.statuses[i].text;
+                var twitterParagraph = $('<p>', {
+                    text: tweets
+                });
+                $(".twitter").append(twitterParagraph);
+            }
+        } else {
+            console.log(boolean);
         }
+
     });
 
 }
 
 
+
+
+
+
+
 $(document).ready(function () {
     appleRss();
-
-
 
 
 

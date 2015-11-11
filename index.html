@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weeping Beef</title>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Weeping Beef</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="main.js"></script>
 
 
 </head>
@@ -24,12 +31,16 @@
                 <div class="col-md-12 col-md-12">Top 10 Movies</div>
             </div>
         </div>
+
         <div class="col-md-3 col-lg-3 column">
             <div class="row column_header">
                 <div class="col-md-12">Title</div>
             </div>
             <div class="row column_content youtube">
-                <div class="col-md-12">Content</div>
+                <div class="col-md-12">Content
+                    <!-- Container for youtube player -->
+                    <div id="player"></div>
+                </div>
             </div>
             <div class="row column_footer">
                 <div class="col-md-12">Youtube</div>
@@ -56,28 +67,14 @@
             <div class="row column_footer">
                 <div class="col-md-12">Vine</div>
             </div>
+
         </div>
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
-    <!-- Container for youtube player -->
-    <div id="player"></div>
-<script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="jquery.js"></script>
+
+
 </body>
 </html>

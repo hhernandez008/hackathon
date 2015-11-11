@@ -14,14 +14,29 @@ header, .column, .column_header, .column_content, .column_footer  {
 }
 .column {
     height: 100%;
+    padding: 0;
 }
 .column_header {
     height: 10%;
 }
+<<<<<<< HEAD
+.col-sm-3 {
+    height: 100vh;
+    padding: 0;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 26px;
+    background-color: lightgrey;
+    padding: 0;
+=======
 .column_content {
     height: 80%;
     overflow: scroll;
 }
 .column_footer {
     height: 10%;
+>>>>>>> cc7cdd259e82d017ff44e834a1531589a1ef50ef
 }
