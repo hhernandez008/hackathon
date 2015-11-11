@@ -11,16 +11,38 @@ var twitterSearch = apis.twitter;
  */
 
 
+function clearPage(){
+    $('.twitter').empty();
+    $('.vine').empty();
+    $("#youtube").empty();
+}
+
 /**
  * Function sends ajax request to itunes rss feed and returns top 10 movies and appends them to page.
  */
-function appleRss() {
+function appleRss(genreId) {
+
+    var url = null;
+    var genreUrls = [
+        {genre:"all", url:'https://itunes.apple.com/us/rss/topmovies/limit=10/json'},
+        {genre:"action", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4401/json"},
+        {genre:"comedy", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4404/json"},
+        {genre:"horror", url:"https://itunes.apple.com/us/rss/topmovies/limit=10/genre=4408/json"}
+    ];
+
+    for(var i = 0; i < genreUrls.length; i++){
+        if(genreUrls[i].genre === genreId){
+            url=genreUrls[i].url;
+            break;
+        }
+    }
     $.ajax({
         method: 'post',
         dataType: 'json',
-        url: 'http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topMovies/json',
+        url: url,
 
         success: function (response) {
+        console.log(response);
             var movies = response.feed.entry;
             for (var i = 0; i < movies.length; i++) {
                 var image = $('<img>').attr('src', movies[i]['im:image'][2]['label']);
@@ -32,18 +54,16 @@ function appleRss() {
             }
             //Search & append results for first movie
             movieInfo(movies[0]['im:name']['label']);
-            $('.movie_title').find("h3").text(movies[0]['im:name']['label']);
+            $('.movie_title').find("h2").text(movies[0]['im:name']['label']);
 
             //add click handler to imageDiv
             $('.imgdiv').click(function(){
-                $('.twitter').empty();
-                $('.vine').empty();
-                $("#youtube").empty();
+                clearPage();
                 movieInfo($(this).find('div').text());
                 // changed title header according to specific movie clicked
-                $('.movie_title').find("h3").text($(this).find('div').text());
+                $('.movie_title').find("h2").text($(this).find('div').text());
+            })
 
-            });
         },
         error: function (resp) {
 
@@ -86,6 +106,9 @@ function movieInfo(movie){
                     });
                     $(".vine").append(vinesParagraph);
                 }
+            }
+            if(vine.length == 0){
+                $(".vine").append("<p>Vine doesn't care about " + movie + ".");
             }
 
         }else{
@@ -145,9 +168,11 @@ function placeVideos(array){
 
 
 $(document).ready(function () {
+
+    appleRss('all');
+
     $('#videoPlayer').modal('hide');
 
-    appleRss();
 
     //Click handler for each YouTube default image to play the video
     $("#youtube").on("click",".youtubeVideo", function(){
@@ -166,7 +191,15 @@ $(document).ready(function () {
         });
 
     });
-
+    $(".dropdown-menu").on("click","li", function (){
+        console.log("li clicked");
+        console.log(this);
+       var genreId = $(this).attr('id');
+        //clear itunes
+        $(".itunes").html("");
+        clearPage();
+        appleRss(genreId);
+    })
 
 
 });
