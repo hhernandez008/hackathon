@@ -71,10 +71,29 @@ body {
     }
 }
 
+.btn-default {
+    color: #000;
+    background-color: yellow;
+}
+.open>.dropdown-toggle.btn-default,
+.btn-default:focus, .btn-default:hover {
+    color: #000;
+    background-color: #f3dd00;
+}
+.dropdown-menu {
+    color: #000;
+    background-color: #f3dd00;
+}
+.open>.dropdown-toggle.btn-default {
+    color: #000;
+    background-color: #f3dd00;
+}
+
 /* YouTube Videos */
 .youtubeVideo{
     width: 155px;
     height: 170px;
+
     margin: 3% 0;
 }
 .thumb {
@@ -100,7 +119,7 @@ body {
 }
 .close{
     color: #fff;
-    opacity: 1
+    opacity: 1;
 }
 .modal-header, .modal-footer{
     border: none;

@@ -11,13 +11,31 @@
     <script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
     <script src="jquery.js"></script>
 
+
 </head>
 <body class="container-fluid">
 <!-- title and headers -->
-    <div class="row title"><h1>What's the Beef with Movies?</h1></div>
-    <div class="row headers">
-    <div class="col-sm-offset-2 col-sm-2 top_movies"><h4>Top 10</h4></div>
-    <div class="col-sm-7 movie_title"><h3></h3></div>
+<div class="row title"><h1>What's the beef with movies?</h1></div>
+<div class="row headers">
+    <div class="col-sm-offset-2 col-sm-2 top_movies"><h4>Top 10</h4>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Dropdown
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li id="all">All</li>
+                <li id="action">Action &amp: Adventure</li>
+                <li id="comedy">Comedy</li>
+                <li id="horror">Horror</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-7 movie_title">
+        <h2></h2>
+        <h4>What the internet thinks:</h4>
+    </div>
+
 </div>
 
 <!-- Containers for: top 10 movies, youtube trailers, twitter, vine -->
@@ -69,7 +87,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close btn-default" data-dismiss="modal">&times;</button>
-                    <div class="movie_title"><h3 class="modal-title"></h3></div>
+                    <div class="movie_title"><h2 class="modal-title"></h2></div>
                 </div>
                 <div class="modal-body">
                     <!-- add video iframe form .youtubeVideo click handler (jquery.js) -->
@@ -83,3 +101,4 @@
 
 </body>
 </html>
+
