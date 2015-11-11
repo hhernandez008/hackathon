@@ -21,8 +21,7 @@ body {
     width: 100%;
     color: #f3dd00;
     -webkit-text-stroke: 1px #630000;
-    text-shadow:
-    3px 3px 0 #000,
+    text-shadow: 3px 3px 0 #000,
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
@@ -45,6 +44,8 @@ body {
 .column_footer {
     height: 10%;
 }
+
+/* iTunes */
 .itunes {
     color: black;
     font-weight: bold;
@@ -68,7 +69,6 @@ body {
         background-color: transparent;
         color: #f3dd00;
     }
-
 }
 
 /* YouTube Videos */
@@ -77,11 +77,11 @@ body {
     height: 170px;
     margin: 3% 0;
 }
-.thumb{
+.thumb {
     width: inherit;
     height: inherit;
 }
-.playButton{
+.playButton {
     height: 30%;
     position: relative;
     top: -60%;
@@ -116,7 +116,15 @@ body {
 
 
 /* Vine Videos */
-.vine-embed{
+.vine-embed {
     width: 220px !important;
-    height: 295px !important;
+    height: 220px !important;
+}
+
+/* Twitter */
+.twitter {
+    text-align: left;
+}
+.tweets {
+    margin: 14% 0;
 }

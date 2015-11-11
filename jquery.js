@@ -101,7 +101,8 @@ function movieInfo(movie){
             for (i = 0; i < tweet.statuses.length; i++) {
                 var tweets = tweet.statuses[i].text;
                 var twitterParagraph = $('<div>', {
-                    text: tweets
+                    text: tweets,
+                    class: "tweets"
                 });
                 $(".twitter").append(twitterParagraph);
             }
