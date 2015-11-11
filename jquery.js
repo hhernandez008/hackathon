@@ -161,6 +161,10 @@ $(document).ready(function () {
         //replace the div that holds the default image with the iframe that holds the video
         $($modal).html($iframe);
         $("#videoPlayer").modal("show");
+        $("#videoPlayer").find('button').on('click', function(){
+            $('div.modal-body').html('');
+        });
+
     });
 
 
