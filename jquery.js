@@ -56,8 +56,7 @@ function movieInfo(movie){
         }
     });
 
-    vineSearch.getData(movie, function (boolean, data) {
-        //TODO: How to access vine response data
+    vineSearch.getData("movie " + movie, function (boolean, data) {
         if (boolean) {
             console.log(data);
 
@@ -75,8 +74,7 @@ function movieInfo(movie){
 
         }
     });
-    twitterSearch.getData(movie, function (boolean, data) {
-        //TODO: How to access twitter response data
+    twitterSearch.getData("movie " + movie, function (boolean, data) {
         if (boolean) {
             console.log(data);
             var tweet = data.tweets;
@@ -93,10 +91,6 @@ function movieInfo(movie){
         }
     });
 }
-
-
-
-
 
 
 
