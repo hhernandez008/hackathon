@@ -33,6 +33,7 @@ function appleRss() {
             $('.imgdiv').click(function(){
                 $('.twitter').empty();
                 $('.vine').empty();
+                var movieTitle=$(this).find('div').text();
                 movieInfo($(this).find('div').text());
             });
         },
