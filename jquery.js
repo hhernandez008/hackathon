@@ -14,7 +14,7 @@ var twitterSearch = apis.twitter;
 function clearPage(){
     $('.twitter').empty();
     $('.vine').empty();
-    $(".youtube").empty();
+    $("#youtube").empty();
     movieInfo($(this).find('div').text());
     // changed title header according to specific movie clicked
     $('.movie_title').find("h4").text($(this).find('div').text());

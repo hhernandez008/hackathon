@@ -52,7 +52,7 @@ body {
     font-family: film_font, sans-serif;
 }
 .image_text {
-    /*background-color: #f3dd00;*/
+    background-color: #f3dd00;
 }
 .imgdiv{
     margin: 1% 0;
@@ -78,15 +78,15 @@ body {
 .open>.dropdown-toggle.btn-default,
 .btn-default:focus, .btn-default:hover {
     color: #000;
-    background-color: yellow;
+    background-color: #f3dd00;
 }
 .dropdown-menu {
     color: #000;
-    background-color: yellow;
+    background-color: #f3dd00;
 }
 .open>.dropdown-toggle.btn-default {
     color: #000;
-    background-color: yellow;
+    background-color: #f3dd00;
 }
 
 /* YouTube Videos */
@@ -119,7 +119,7 @@ body {
 }
 .close{
     color: #fff;
-    opacity: 1
+    opacity: 1;
 }
 .modal-header, .modal-footer{
     border: none;
