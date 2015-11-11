@@ -2,57 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-
-    <script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Weeping Beef</title>
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://learning-fuze.github.io/hackathon/api-obj.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="jquery.js"></script>
     <script src="main.js"></script>
 
 
 </head>
-<body>
-<div class="main_container">
-    <!-- header container -->
-    <div>
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text-center">Weeping Beef</h1>
+<body class="container-fluid">
+    <div class="row title"><h2>Weeping Beef</h2></div>
+    <div class="row all_columns">
+        <div class="col-md-3 col-lg-3 column">
+            <div class="row column_header">
+                <div class="col-md-12 col-md-12">Top 10 Movies</div>
+            </div>
+            <div class="row column_content itunes">
+                <div class="col-md-12 col-md-12">Content</div>
+            </div>
+            <div class="row column_footer">
+                <div class="col-md-12 col-md-12">Top 10 Movies</div>
             </div>
         </div>
+
+        <div class="col-md-3 col-lg-3 column">
+            <div class="row column_header">
+                <div class="col-md-12">Title</div>
+            </div>
+            <div class="row column_content youtube">
+                <div class="col-md-12">Content
+                    <!-- Container for youtube player -->
+                    <div id="player"></div>
+                </div>
+            </div>
+            <div class="row column_footer">
+                <div class="col-md-12">Youtube</div>
+            </div>
+
+        </div>
+        <div class="col-md-3 col-lg-3 column">
+            <div class="row column_header">
+                <div class="col-md-12">Title</div>
+            </div>
+            <div class="row column_content twitter">
+                <div class="col-md-12">Content</div>
+            </div>
+            <div class="row column_footer">
+                <div class="col-md-12">Twitter</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3 column">
+            <div class="row column_header">
+                <div class="col-md-12">Title</div>
+            </div>
+            <div class="row column_content vine">
+                <div class="col-md-12">Content</div>
+            </div>
+            <div class="row column_footer">
+                <div class="col-md-12">Vine</div>
+            </div>
+
+        </div>
     </div>
-    <!-- main container for all four containers -->
-    <div>
-        <div class="col-sm-3 itunes"><!-- container for iTunes -->
-            <p class="text-center">iTunes</p>
-        </div>
-        <div class="col-sm-3 youtube"><!-- container for youtube -->
-            <p class="text-center">youTube</p>
-            <!-- Container for youtube player -->
-            <div id='player'></div>
-        </div>
-        <div class="col-sm-3 twitter"><!-- container for twitter -->
-            <p class="text-center">twitter</p>
-        </div>
-        <div class="col-sm-3 vine"><!-- container for vine -->
-            <p class="text-center">vine</p>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
 
 
 </div>
