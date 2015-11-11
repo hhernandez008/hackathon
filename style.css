@@ -52,7 +52,7 @@ body {
     font-family: film_font, sans-serif;
 }
 .image_text {
-    background-color: #f3dd00;
+    /*background-color: #f3dd00;*/
 }
 @media screen and (max-width: 768px) {
     .image_text {
@@ -60,8 +60,20 @@ body {
         color: #f3dd00;
     }
 }
-
-/* YouTube Videos */
+.btn-default {
+    background-color: yellow;
+}
+.open>.dropdown-toggle.btn-default,
+.btn-default:focus, .btn-default:hover {
+    background-color: yellow;
+}
+.dropdown-menu {
+    background-color: yellow;
+}
+.open>.dropdown-toggle.btn-default {
+    background-color: yellow;
+}
+    /* YouTube Videos */
 .youtubeVideo {
     width: 295px;
     height: 175px;
