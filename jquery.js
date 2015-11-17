@@ -195,7 +195,10 @@ $(document).ready(function () {
         $(".itunes").html("");
         clearPage();
         appleRss(genreId);
-    })
+    });
 
+    $(".modal-content").on("click", "button", function(){
+       $(".modal-body").html("");
+    });
 
 });
