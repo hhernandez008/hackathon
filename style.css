@@ -91,10 +91,8 @@ body {
 
 /* YouTube Videos */
 .youtubeVideo{
-    width: 155px;
-    height: 170px;
-
-    margin: 3% 0;
+    width: 100%;
+    height: auto;
 }
 .thumb {
     width: inherit;
@@ -131,13 +129,16 @@ body {
 .videoToPlay{
     width: 640px;
     height: 385px;
+
 }
 
 
 /* Vine Videos */
 .vine-embed {
-    width: 220px !important;
-    height: 220px !important;
+    #width: 220px !important;
+    #height: 220px !important;
+    width: 100%;
+    height: auto;
 }
 
 /* Twitter */
@@ -145,5 +146,5 @@ body {
     text-align: left;
 }
 .tweets {
-    margin: 14% 0;
+    margin: 14% 0 14% 5%;
 }
