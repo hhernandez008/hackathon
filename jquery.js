@@ -147,7 +147,7 @@ function placeVideos(array){
     for(var i = 0; i<array.length; i++){
         var $videoDiv = $("<div>",{
                 class: "youtubeVideo",
-                id: array[i].id,
+                id: array[i].id
         });
         $("#youtube").append($videoDiv);
     }
@@ -198,7 +198,8 @@ $(document).ready(function () {
     });
 
     $(".modal-content").on("click", "button", function(){
-       $(".modal-body").html("");
+        $(".modal-body").html("");
+
     });
 
 });
